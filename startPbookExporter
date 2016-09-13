@@ -1,0 +1,23 @@
+#! /bin/sh
+#
+#  startPbookExporterAudits
+#  start script for the jobPbookExporter for Audits
+#
+#  Parameter
+# $1 : Modification Date
+#
+# 20120416, AJL: created
+#
+#
+PYTHONPATH=/PPI/media/ppi/pbase/lib/python:/PPI/media/ppi/adman/lib/python:/PPI/media/ppi/pbase/lib/python/ppibase
+export PYTHONPATH
+
+JDBCURL_ADMAN=jdbc:sybase:Tds:ppidb:14750/
+export JDBCURL_ADMAN
+
+echo startPbookExporterAudits-AJL
+#
+#
+#
+$ADMAN/scripts/export/start.jobExporter Mode=XMLSectFrontExporterUserExitPy exportDir='/PPI/adman/xmlExportpbook/xmlExportpbook' date=$1 enddate=$2 product=NYT48 fileclass=Audits jobtypes=AD storeAuditTimes=0 nozip=1 useAdvertizer=1 expFeatures=1 exportTypes=''
+#
