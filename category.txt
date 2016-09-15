@@ -1,5 +1,4 @@
 AL_FP
-AL_TV
 AU_FP
 BU_B1BX
 BU_FP
